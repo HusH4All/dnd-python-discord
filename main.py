@@ -10,9 +10,9 @@ load_dotenv()
 intents = discord.Intents.default()
 intents.message_content = True
 intents.guilds = True
-intents.guild_members = True
+intents.members = True
 intents.guild_messages = True
-intents.guild_presences = True
+intents.presences = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
