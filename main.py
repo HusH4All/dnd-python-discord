@@ -39,12 +39,8 @@ async def on_disconnect():
 async def main():
     try:
         print('✅ Connected to SQLite Database.')
-
-        # Setup events
         setup_events(bot)
-
-        # Run the bot
-        bot.run(os.getenv('TOKEN'))
+        await bot.start(os.getenv('TOKEN'))
     except Exception as e:
         print(f'❗Error: {e}.')
     finally:
@@ -53,3 +49,4 @@ async def main():
 if __name__ == "__main__":
     import asyncio
     asyncio.run(main())
+
