@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import sqlite3
 from handlers.event_handler import setup_events
 
-load_dotenv(".env")
+load_dotenv()
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -40,7 +40,7 @@ async def main():
     try:
         print('✅ Connected to SQLite Database.')
         setup_events(bot)
-        await bot.start(os.getenv('TOKEN'))
+        await bot.start(os.getenv('DISCORD_TOKEN'))
     except Exception as e:
         print(f'❗Error: {e}.')
     finally:
