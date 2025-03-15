@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import sqlite3
 from handlers.event_handler import setup_events
 
-load_dotenv()
+load_dotenv(".env")
 
 intents = discord.Intents.default()
 intents.message_content = True
